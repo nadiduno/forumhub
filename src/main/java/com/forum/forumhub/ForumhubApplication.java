@@ -8,6 +8,7 @@ public class ForumhubApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ForumhubApplication.class, args);
+		System.out.println("Run server");
 	}
 
 }
