@@ -13,6 +13,14 @@
   <br />
 </div>
 
+## Tecnologias
+
+*   **Java:** Linguagem de programação principal.
+*   **Spring Boot:** Framework para desenvolvimento rápido de aplicações Java.
+*   **Maven:** Ferramenta de gerenciamento de dependências e build.
+*   **PostgreSQL:** Banco de dados relacional utilizado.
+
+
 ## Configuração do Banco de Dados
 
 Para configurar o banco de dados, você precisará ajustar as seguintes propriedades no arquivo `application.properties` ou `application.yml` (preferencialmente `application.yml` para melhor organização):
