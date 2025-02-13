@@ -7,7 +7,7 @@
 <div>
   <img 
     alt="Imagem que apresenta o protótipo do site, o qual é um mini portfólio do github nas cores laranja e roxo e fundo branco"
-    src="https://github.com/nadiduno/portfolioComunidadeToti/blob/main/.github/diagrama.png" 
+    src="https://github.com/nadiduno/forumhub/blob/main/.github/diagrama.png" 
     width="50%"
   >
   <br />
