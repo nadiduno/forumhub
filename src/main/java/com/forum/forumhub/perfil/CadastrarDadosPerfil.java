@@ -1,5 +1,5 @@
 package com.forum.forumhub.perfil;
 
-public record CadastrarDadosPerfil() {
+public record CadastrarDadosPerfil(String nome) {
 
 }
