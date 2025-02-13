@@ -18,20 +18,13 @@
 Para configurar o banco de dados, você precisará ajustar as seguintes propriedades no arquivo `application.properties` ou `application.yml` (preferencialmente `application.yml` para melhor organização):
 
 ```xml
-spring:
-  application:
-    name: literaluraspring
-  datasource:
-    url: jdbc:postgresql://localhost:8080/ literalura_db
-    username: # Seu usuário do PostgreSQL
-    password: # Sua senha do PostgreSQL
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update # Ou create, dependendo da sua necessidade. Cuidado com 'create' em produção!
-    show-sql: true     # Exibe as queries SQL no console (para desenvolvimento)
-    format-sql: true   # Formata as queries SQL no console (para desenvolvimento)
+  spring.datasource.url=jdbc:postgresql://${DB_HOST}/forumhub_db
+  spring.datasource.username=${DB_USER}
+  spring.datasource.password=${DB_PASSWORD}
+  spring.datasource.driver-class-name=org.postgresql.Driver
+  spring.jpa.hibernate.ddl-auto=update
+
+  spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 ```
 
 ## 🙌 Contribuindo
