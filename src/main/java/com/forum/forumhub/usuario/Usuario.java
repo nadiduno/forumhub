@@ -2,13 +2,16 @@ package com.forum.forumhub.usuario;
 
 import java.util.List;
 
+import com.forum.forumhub.auth.Auth;
 import com.forum.forumhub.usuarioPerfil.UsuarioPerfil;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Table(name = "usuario")
@@ -20,17 +23,18 @@ public class Usuario {
 
 	    private String nome;
 	    private String email;
-	    private String senha;
 
 	    @OneToMany(mappedBy = "usuario")
 	    private List<UsuarioPerfil> usuarioPerfis;
+	    
+	    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL) 
+	    private Auth auth;
 
 	    public Usuario() {}
 
 	    public Usuario(CadastrarDadosUsuario dados) {
 	        this.nome = dados.nome();
 	        this.email = dados.email();
-	        this.senha = dados.senha();
 	    }
 
 	    public Long getId() {
@@ -45,10 +49,7 @@ public class Usuario {
 	        return email;
 	    }
 
-	    public String getSenha() {
-	        return senha;
-	    }
-
+	    
 	    public List<UsuarioPerfil> getUsuarioPerfis() {
 	        return usuarioPerfis;
 	    }
@@ -65,11 +66,12 @@ public class Usuario {
 	        this.email = email;
 	    }
 
-	    public void setSenha(String senha) {
-	        this.senha = senha;
-	    }
 
 	    public void setUsuarioPerfis(List<UsuarioPerfil> usuarioPerfis) {
 	        this.usuarioPerfis = usuarioPerfis;
+	    }
+	    
+	    public void setAuth(Auth auth) {
+	        this.auth = auth;
 	    }
 }
